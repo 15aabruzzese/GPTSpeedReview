@@ -1,0 +1,20 @@
+name: ChatGPT - Prompt Testing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  custom-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run custom script
+        uses: ./
+        with:
+            DIFF: "const input = getInput('TOKEN');"
+        env:
+            OPENAI_API_KEY: ${{secrets.GPT_TOKEN}}
+
+      # Add additional steps as needed

@@ -2,6 +2,12 @@ name: 'Speed Review'
 description: 'Takes the git diff then analysis it with ChatGPT and addition prompt curation'
 author: 'Andrew Abruzzese'
 
+inputs:
+  DIFF:
+    type: string
+    required: true
+
+
 runs:
   using: 'node20'
   main: 'dist/index.js'
